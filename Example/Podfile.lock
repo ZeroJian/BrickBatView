@@ -1,0 +1,23 @@
+PODS:
+  - BrickBatView (1.0.0):
+    - SnapKit
+  - SnapKit (4.0.0)
+
+DEPENDENCIES:
+  - BrickBatView (from `../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - SnapKit
+
+EXTERNAL SOURCES:
+  BrickBatView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  BrickBatView: 9381fb7ed5c2e0bfd411446ceee5a1fe7fb97509
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+
+PODFILE CHECKSUM: 0fd0174978adb5bf9a83754ba6e16cbc0462162b
+
+COCOAPODS: 1.5.0
