@@ -8,14 +8,14 @@
 
 Pod::Spec.new do |s|
 	s.name             = 'BrickBatView'
-	s.version          = '1.1.0'
+	s.version          = '1.2.0'
 	s.summary          = 'BrickBatView'
 	
 	s.description      = <<-DESC
 	BrickBatView is a simple create alertView.
 	DESC
 	
-	s.homepage         = 'https://github.com/zerojian/BrickBatView'
+	s.homepage         = 'https://github.com/Zerojian/BrickBatView'
 	s.license          = { :type => 'MIT', :file => 'LICENSE' }
 	s.author           = { 'ZeroJian' => 'zj17223412@outlook.com' }
 	s.source           = { :git => 'https://github.com/ZeroJian/BrickBatView.git', :tag => s.version.to_s }
