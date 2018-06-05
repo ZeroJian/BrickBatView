@@ -36,11 +36,11 @@ pod 'BrickBatView'
 
 ```swift
 BrickBatView(inView: view)?
-.setup()
-.addTitleItem(title: "Title", infoicon: nil)
-.addMessageItem(text: "message")
-.addButtonItem(title: ["cancel", "done"], style: .fill)
-.show()		
+      .setup()
+      .addTitleItem(title: "Title", infoicon: nil)
+      .addMessageItem(text: "message")
+      .addButtonItem(title: ["cancel", "done"], style: .fill)
+      .show()		
 
 ```
 
@@ -48,19 +48,19 @@ BrickBatView(inView: view)?
 
 ```swift
 BrickBatView(inView: view)?
-.handle(action: { (index) in
-print("sender index: \(index)")
-}, tapHidden: true)
+      .handle(action: { (index) in
+          print("sender index: \(index)")
+      }, tapHidden: true)
 
-.identifier("BrickView_SETUP")
+      .identifier("BrickView_SETUP")
 
-.lifeCyle(showFinishedAction: { (show) in
-print("isShowFinished")
-}, hiddenAction: {
-print("isHidden")
-})
-.offset(10)
-.position(.bottom, edgeInster: 20)
+      .lifeCyle(showFinishedAction: { (show) in
+          print("isShowFinished")
+      }, hiddenAction: {
+          print("isHidden")
+      })
+      .offset(10)
+      .position(.bottom, edgeInster: 20)
 ...
 ```
 
@@ -71,16 +71,16 @@ extension BrickBatView {
 
 func addExtensionTextField() -> Self {
 
-let textField = UITextField()
-textField.bounds.size.height = 50
-textField.placeholder = "BrickView addTextField Extension"
-textField.borderStyle = .roundedRect
+      let textField = UITextField()
+      textField.bounds.size.height = 50
+      textField.placeholder = "BrickView addTextField Extension"
+      textField.borderStyle = .roundedRect
 
-return addContentView(textField)
+      return addContentView(textField)
 }
 
 brickBatView
-.addExtensionTextField()
+      .addExtensionTextField()
 ...	
 ```
 
@@ -89,17 +89,17 @@ brickBatView
 ```swift
 let buttonView = ButtonView()	
 brickBatView
-.addContentView(buttonView, controls: buttonView.button)
+      .addContentView(buttonView, controls: buttonView.button)
 ...
 
 let item = BrickBarItem()
 brickBatView
-.addBrickItem(item)
+      .addBrickItem(item)
 ...
 
 let imageView = UIimageView()
 brickBatView
-.addGesture([imageView])
+      .addGesture([imageView])
 ...
 ```
 
