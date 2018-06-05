@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'BrickBatView_Example' do
+  pod 'BrickBatView', :path => '../'
+
+  target 'BrickBatView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
