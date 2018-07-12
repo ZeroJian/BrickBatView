@@ -185,7 +185,7 @@ class PopViewViewController: UIViewController {
 
 extension BrickItem.ICoN {
 	
-	static let done = BrickItem.ICoN.custom(name: "icon_done")
+	static let done = BrickItem.ICoN.custom(name: "icon_icon")
 }
 
 extension BrickBatView {
