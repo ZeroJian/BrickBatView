@@ -21,8 +21,8 @@ Pod::Spec.new do |s|
 	#s.source           = { :git => 'https://github.com/ZeroJian/BrickBatView.git', :tag => s.version.to_s }
 	s.source           = { :git => '/Users/ZeroJian/Code/BrickBatView'}
 	s.ios.deployment_target = '8.0'
-	s.swift_version = '4.0'
-	
+	#s.swift_version = '4.0'
+	s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4' }
 	s.source_files = 'BrickBatView/Classes/**/*'
 	
 	s.dependency 'SnapKit'
