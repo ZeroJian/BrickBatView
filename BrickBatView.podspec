@@ -18,11 +18,11 @@ Pod::Spec.new do |s|
 	s.homepage         = 'https://github.com/Zerojian/BrickBatView'
 	s.license          = { :type => 'MIT', :file => 'LICENSE' }
 	s.author           = { 'ZeroJian' => 'zj17223412@outlook.com' }
-	#s.source           = { :git => 'https://github.com/ZeroJian/BrickBatView.git', :tag => s.version.to_s }
-	s.source           = { :git => '/Users/ZeroJian/Code/BrickBatView'}
+	s.source           = { :git => 'https://github.com/ZeroJian/BrickBatView.git', :tag => s.version.to_s }
+	#s.source           = { :git => '/Users/ZeroJian/Code/BrickBatView'}
 	s.ios.deployment_target = '8.0'
 	#s.swift_version = '4.0'
-	s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4' }
+	#s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4' }
 	s.source_files = 'BrickBatView/Classes/**/*'
 	
 	s.dependency 'SnapKit'
