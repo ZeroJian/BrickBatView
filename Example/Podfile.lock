@@ -1,13 +1,13 @@
 PODS:
-  - BrickBatView (1.0.0):
+  - BrickBatView (1.2.1):
     - SnapKit
-  - SnapKit (4.0.0)
+  - SnapKit (4.2.0)
 
 DEPENDENCIES:
   - BrickBatView (from `../`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - SnapKit
 
 EXTERNAL SOURCES:
@@ -15,9 +15,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BrickBatView: 9381fb7ed5c2e0bfd411446ceee5a1fe7fb97509
-  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  BrickBatView: 59962207989e92119c5111371ec50fa7414bacce
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
 PODFILE CHECKSUM: 0fd0174978adb5bf9a83754ba6e16cbc0462162b
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.6.0.beta.2

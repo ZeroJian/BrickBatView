@@ -523,7 +523,7 @@ extension BrickBatView {
 		
 		
 		if animationSpring {
-			UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1.0, options: UIViewAnimationOptions(), animations: { () -> Void in
+            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1.0, options: UIView.AnimationOptions(), animations: { () -> Void in
 				self.backgroundColor = self.maskViewBackgroundColor
 				if self.positionDirection.isCenter {
 					self.contentView.transform = CGAffineTransform.identity

@@ -26,8 +26,29 @@ public protocol BrickBat {
 
 
 open class BrickItem: BrickBat {
+    
+    // set custom ui color for default BrickItem
+    static var itemUI: UI = UI()
+    
+    public struct UI {
+        /// Button Item
+        public var buttonBackgroundColor: UIColor = UIColor(red:51/255, green:51/255, blue:51/255, alpha: 1.0)
+        public var buttonCancelBorderColor: UIColor = UIColor(red:230/255, green:230/255, blue:230/255, alpha: 1.0)
+        public var buttonFontColor = UIColor.white
+        public var buttonFont: UIFont = UIFont.systemFont(ofSize: 16)
+        
+        /// Title Item
+        public var titleFont: UIFont = UIFont.boldSystemFont(ofSize: 18)
+        public var titleTextColor: UIColor = UIColor(red:51/255, green:51/255,blue:51/255, alpha: 1.0)
+        public var titleItemBackgroundColor: UIColor = .clear
+        
+        /// Message Item
+        public var messageFont = UIFont.systemFont(ofSize: 15)
+        public var messageTextColor = UIColor(red:51/255, green:51/255, blue:51/255, alpha: 1.0)
+        public var messageItemBackgroundColor: UIColor = .clear
+    }
 	
-	public init(contentViewWidth: CGFloat, margin: CGFloat) {
+    public init(contentViewWidth: CGFloat, margin: CGFloat) {
 		self.contentViewWidth = contentViewWidth
 		self.margin = margin
 		backgroundView.backgroundColor = .white
@@ -74,14 +95,6 @@ open class BrickItem: BrickBat {
 			}
 		}
 	}
-	
-	
-	/// ButtonItem Color
-	
-	public var buttonBackgroundColor: UIColor = UIColor(red:51/255, green:51/255, blue:51/255, alpha: 1.0)
-	public var buttonCancelBorderColor: UIColor = UIColor(red:230/255, green:230/255, blue:230/255, alpha: 1.0)
-	public var buttonFontColor = UIColor.white
-	
 }
 
 extension BrickItem {
@@ -117,8 +130,9 @@ extension BrickItem {
 			return nil
 		}
 		
-		labelElement.font = UIFont.boldSystemFont(ofSize: 18)
-		labelElement.textColor = UIColor(red:51/255, green:51/255,blue:51/255, alpha: 1.0)
+		labelElement.font = BrickItem.itemUI.titleFont
+		labelElement.textColor = BrickItem.itemUI.titleTextColor
+        backgroundView.backgroundColor = BrickItem.itemUI.titleItemBackgroundColor
 		
 		labelElement.text = title
 		labelElement.numberOfLines = 0
@@ -174,12 +188,13 @@ extension BrickItem {
 		
 		labelElement = UILabel()
 		labelElement.numberOfLines = 0
-		labelElement.font = UIFont.systemFont(ofSize: 15)
-		labelElement.textColor = UIColor(red:51/255, green:51/255, blue:51/255, alpha: 1.0)
+		labelElement.font = BrickItem.itemUI.messageFont
+		labelElement.textColor = BrickItem.itemUI.messageTextColor
+        backgroundView.backgroundColor = BrickItem.itemUI.messageItemBackgroundColor
 		
 		let paragraphStyle = NSMutableParagraphStyle()
 		paragraphStyle.lineSpacing = 10
-		attributedString.addAttributes([NSAttributedStringKey.paragraphStyle : paragraphStyle], range:range)
+        attributedString.addAttributes([NSAttributedString.Key.paragraphStyle : paragraphStyle], range:range)
 		
 		labelElement.attributedText = attributedString
 		labelElement.textAlignment = alignment
@@ -221,7 +236,7 @@ extension BrickItem {
 		
 		for index in 0 ..< titleArray.count {
 			let button = UIButton(type: .custom)
-			button.backgroundColor = buttonBackgroundColor
+			button.backgroundColor = BrickItem.itemUI.buttonBackgroundColor
 			
 			switch style {
 			case .indie:
@@ -231,7 +246,7 @@ extension BrickItem {
 				break
 			}
 			
-			button.setTitleColor(buttonFontColor, for: .normal)
+			button.setTitleColor(BrickItem.itemUI.buttonFontColor, for: .normal)
 			button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
 			let title: String = titleArray[index]
 			button.setTitle(title, for: .normal)
@@ -259,16 +274,16 @@ extension BrickItem {
 				
 				if index == 0 {
 					button.backgroundColor = .white
-					button.setTitleColor(buttonBackgroundColor, for: .normal)
+					button.setTitleColor(BrickItem.itemUI.buttonBackgroundColor, for: .normal)
 					
 					switch style {
 					case .indie:
 						button.layer.borderWidth = 1
-						button.layer.borderColor = buttonCancelBorderColor.cgColor
+						button.layer.borderColor = BrickItem.itemUI.buttonCancelBorderColor.cgColor
 						
 					case .fill:
 						let lineView = UIView()
-						lineView.backgroundColor = buttonCancelBorderColor
+						lineView.backgroundColor = BrickItem.itemUI.buttonCancelBorderColor
 						button.addSubview(lineView)
 						lineView.snp.makeConstraints({ (maker) in
 							maker.top.equalToSuperview()
