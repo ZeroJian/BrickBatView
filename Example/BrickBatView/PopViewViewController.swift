@@ -19,7 +19,7 @@ class PopViewViewController: UIViewController {
 	var isShowButton: Bool = false
 
 	var buttonStyle: Int = 0
-	var buttonCount: Int = 2
+	var buttonCount: Int = 1
 	
 	var positionDirection: BrickBatView.Direction = .center(.center)
 	
@@ -166,7 +166,7 @@ class PopViewViewController: UIViewController {
 		
 		brickView?
 //			.addExtensionTextField()
-			.position(positionDirection, edgeInster: 10)
+			.position(positionDirection, edgeInster: 50)
 		
 		brickView?
 			.handle(action: { (i) in
@@ -178,6 +178,15 @@ class PopViewViewController: UIViewController {
 			.show(tapMaskHidden: !isShowButton)
 		
 		let isShow = BrickBatView.isShowing(to: view, identifier: "12345")
+        
+        
+        view.subviews.forEach({
+            $0.subviews.forEach({ (ssview) in
+                if let switchView = ssview as? UISwitch {
+                    switchView.setOn(false, animated: false)
+                }
+            })
+        })
 		
 		popViewContent.removeAll()
 	}

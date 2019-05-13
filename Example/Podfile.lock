@@ -1,5 +1,5 @@
 PODS:
-  - BrickBatView (1.2.1):
+  - BrickBatView (1.3.0):
     - SnapKit
   - SnapKit (4.2.0)
 
@@ -15,9 +15,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BrickBatView: 59962207989e92119c5111371ec50fa7414bacce
+  BrickBatView: a11d2e904942c64b6ef836939c6b47297f44aca0
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
 PODFILE CHECKSUM: 0fd0174978adb5bf9a83754ba6e16cbc0462162b
 
-COCOAPODS: 1.6.0.beta.2
+COCOAPODS: 1.6.1

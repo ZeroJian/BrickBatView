@@ -221,7 +221,7 @@ extension BrickItem {
 	
 	public func markButtonItem(titleArray: [String], style: ButtonStyle, height buttonHeight: CGFloat = 45) -> UIView? {
 		
-		guard titleArray.count > 1 else {
+		guard titleArray.count >= 1 else {
 			return nil
 		}
 		
